@@ -34,9 +34,10 @@
     "@microsoft/eslint-formatter-sarif": "3.1.0",
     "bn.js": "5.1.1",
     "eslint": "8.10.0",
+    "bn.js": "5.2.3",
     "ethjs-unit": "0.1.6",
     "isomorphic-webcrypto": "2.3.8",
-    "node-fetch": "2.6.10",
+    "node-fetch": "2.6.12",
     "tweetnacl": "1.0.3"
   },
   "devDependencies": {
