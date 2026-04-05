@@ -25,6 +25,16 @@ jobs:
 
     steps:
       - name: Checkout code
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+
+      - name: Set up Node.js
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
         uses: actions/checkout@v4
 
       - name: Install ESLint
@@ -50,6 +60,7 @@ jobs:
 
       - name: Upload analysis results to GitHub
         if: always()
+        uses: github/codeql-action/upload-sarif@b374143c1149a9115d881581d29b8390bbcbb59c # v3.22.11
         uses: github/codeql-action/upload-sarif@v3
         with:
           sarif_file: eslint-results.sarif
